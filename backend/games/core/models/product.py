@@ -13,7 +13,6 @@ class Product(models.Model):
     class TypeProduct(models.TextChoices):
         GAMES = 'G', _('GAMES')
         DLC = 'D', _('ADDITIONS')
-        SOUND = 'S', _('SOUNDS')
 
     id = models.UUIDField('UUID продукта',
                           primary_key=True,
@@ -54,8 +53,6 @@ class Product(models.Model):
 
     type = models.CharField(max_length=2,
                             choices=TypeProduct.choices,
-                            blank=False,
-                            null=False,
                             help_text='Укажите тип продукта')
 
     def __str__(self):
